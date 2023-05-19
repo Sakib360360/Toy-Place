@@ -11,6 +11,7 @@ import PrivateRoutes from './PrivateRoutes';
 import MyToys from '../MyToys/MyToys';
 import ToyDetails from '../ToyDetails/ToyDetails';
 import Gallery from '../Gallery/Gallery';
+import UpdateToy from '../UpdateToy/UpdateToy';
 
 
 const Routes = createBrowserRouter([
@@ -59,6 +60,12 @@ const Routes = createBrowserRouter([
                 path:'/gallery',
                 errorElement:<ErrorPage></ErrorPage>,
                 element:<Gallery></Gallery>
+            },
+            {
+                path:'/updateToy/:id',
+                errorElement:<ErrorPage></ErrorPage>,
+                element:<UpdateToy></UpdateToy>,
+                loader:({params})=>fetch(`https://toy-place-server.vercel.app/toyDetails/${params.id}`)
             }
 
         ]

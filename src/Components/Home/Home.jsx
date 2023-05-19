@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'react-tabs/style/react-tabs.css';
 import Toys from './Toys';
-import { data } from 'autoprefixer';
 import './Home.css'
 import Bannar from './Bannar';
 
@@ -30,9 +29,6 @@ const Home = () => {
 
     const uniqueCategoriesArray = Array.from(categoriesList);
     const uniqueSubCategoriesArray = Array.from(subCategoriesList);
-    // console.log(uniqueCategoriesArray)
-
-    // console.log(allToys)
 
     const handleSubCategory = (name) => {
         console.log(name)
@@ -45,7 +41,7 @@ const Home = () => {
                 }
                 setToyByCategory(data)
             })
-
+console.log(toyBycategory)
     }
     // toys by subcategories
     const handleSubCategoryToys = (name) => {
@@ -117,12 +113,15 @@ const Home = () => {
                 {/* data showing */}
                 <div>
                     <div className='flex flex-wrap justify-center mx-auto mt-24 gap-8 md:gap-24'>
-                        {
+                        {/* {
                         subCategoriesToys.length<1 && <>
                         {
                             allToys.slice(0,10).map(data=><Toys key={data._id} data={data}></Toys>)
                         }
                         </>
+                    } */}
+                    {
+                        subCategoriesToys.length < 1 && toyBycategory.length <1 ? allToys.slice(0,10).map(data=><Toys key={data._id} data={data}></Toys>):<></>
                     }
                     </div>
                     

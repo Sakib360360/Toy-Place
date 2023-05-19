@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const MyToysCard = ({ toy,handleDelete }) => {
@@ -19,7 +20,7 @@ const MyToysCard = ({ toy,handleDelete }) => {
                 <p>{details}</p>
                 
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Edit</button>
+                    <Link to={`/updateToy/${_id}`}>Edit</Link>
                     <button onClick={() => handleDelete(_id)} className="btn btn-danger">Delete</button>
                 </div>
             </div>
