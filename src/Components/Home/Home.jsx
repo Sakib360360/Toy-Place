@@ -68,7 +68,7 @@ const Home = () => {
 
             <div className=' my-12 '>
                 <h1>Categories </h1>
-                <div className='flex max-w-5xl '>
+                <div className='flex max-w-5xl flex-wrap '>
                     {
                         uniqueCategoriesArray.map(item => {
                             return <>
@@ -82,7 +82,7 @@ const Home = () => {
                     <hr />
                 </div>
                 {/* subcategory */}
-                <div className='flex max-w-5xl  mt-4'>
+                <div className='flex max-w-5xl flex-wrap mt-4'>
                     {
                         uniqueSubCategoriesArray.map((item,index) => {
                             return <>
