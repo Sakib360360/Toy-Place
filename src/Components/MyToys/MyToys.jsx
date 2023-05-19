@@ -12,6 +12,8 @@ const MyToys = () => {
             setMyToys(data)
         })
     },[])
+
+    
     console.log(myToys)
     return (
         <div className='max-w-6xl'>
