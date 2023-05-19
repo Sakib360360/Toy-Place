@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'react-tabs/style/react-tabs.css';
 import Toys from './Toys';
 import { data } from 'autoprefixer';
+import './Home.css'
+import Bannar from './Bannar';
 
 const Home = () => {
 
@@ -58,21 +60,32 @@ const Home = () => {
                 setSubcategoriesToys(data)
             })
 
-        
+
 
         // console.log(uniqueSubCategoriesArray)
     }
+
+    const handleFocus = (event) => {
+        event.target.style.backgroundColor = '#dfe6ed';
+      };
+    
+      const handleBlur = (event) => {
+        event.target.style.backgroundColor = '#FFFFFF';
+      };
     return (
         <>
 
-
+            <div >
+                <Bannar></Bannar>
+            </div>
             <div className=' my-12 '>
-                <h1>Categories </h1>
+                <h1 class="wave-title font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
                 <div className='flex max-w-5xl flex-wrap '>
                     {
                         uniqueCategoriesArray.map(item => {
                             return <>
-                                <button onClick={() => handleSubCategory(item)} className='btn ml-2 rounded-t-lg'>{item}</button>
+                                <button onFocus={handleFocus}
+                                    onBlur={handleBlur} onClick={() => handleSubCategory(item)} className='border-t-2 border-l-2 px-2 border-r-2 ml-2 rounded-t-lg'>{item}</button>
                             </>
                         })
                     }
@@ -82,29 +95,32 @@ const Home = () => {
                     <hr />
                 </div>
                 {/* subcategory */}
+                
                 <div className='flex max-w-5xl flex-wrap mt-4'>
+                
                     {
-                        uniqueSubCategoriesArray.map((item,index) => {
+                        uniqueSubCategoriesArray.map((item, index) => {
                             return <>
-                                <button key={index} onClick={() => handleSubCategoryToys(item)} className='btn ml-2'>{item}</button>
+                                <button onFocus={handleFocus}
+                                    onBlur={handleBlur} key={index} onClick={() => handleSubCategoryToys(item)} className='border-t-2 border-l-2 px-2 border-r-2 rounded-t-lg ml-2'>{item}</button>
                             </>
                         })
                     }
 
                 </div>
                 {
-                    uniqueSubCategoriesArray.length>0 ? <div>
-                    <hr />
-                </div> : <></>
+                    uniqueSubCategoriesArray.length > 0 ? <div>
+                        <hr />
+                    </div> : <></>
                 }
-                
+
                 {/* data showing */}
                 <div>
-                    <h1>Your selected toys</h1>
+                    
                     <div className='flex flex-wrap justify-center mx-auto mt-24 gap-8 md:gap-24'>
                         {
-                           subCategoriesToys.length>0 ? subCategoriesToys.map(data=><Toys key={data._id} data={data}></Toys>) : toyBycategory.map(data=><Toys key={data._id} data={data}></Toys>)
-                           
+                            subCategoriesToys.length > 0 ? subCategoriesToys.map(data => <Toys key={data._id} data={data}></Toys>) : toyBycategory.map(data => <Toys key={data._id} data={data}></Toys>)
+
                         }
                     </div>
                 </div>

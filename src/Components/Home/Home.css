@@ -1,0 +1,21 @@
+.wave-title {
+    font-size: 32px;
+    background: linear-gradient(90deg, #74ebd5, #9face6);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: waveAnimation 2s linear infinite;
+  }
+
+  @keyframes waveAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
