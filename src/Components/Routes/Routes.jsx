@@ -5,6 +5,7 @@ import Home from '../Home/Home';
 import ErrorPage from '../Errorpage/Errorpage';
 import Register from '../Login/Register';
 import Login from '../Login/Login';
+import AddToy from '../AddToy/AddToy';
 
 
 const Routes = createBrowserRouter([
@@ -27,7 +28,13 @@ const Routes = createBrowserRouter([
                 path:'/login',
                 errorElement:<ErrorPage></ErrorPage>,
                 element:<Login></Login>
+            },
+            {
+                path:'/addToy',
+                errorElement:<ErrorPage></ErrorPage>,
+                element:<AddToy></AddToy>
             }
+
         ]
     }
 ])
