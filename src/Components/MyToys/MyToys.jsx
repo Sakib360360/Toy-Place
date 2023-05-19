@@ -57,7 +57,7 @@ const MyToys = () => {
     console.log(myToys)
     return (
         <div className='max-w-6xl'>
-            <div className='flex justify-center flex-wrap gap-8'>
+            <div className='flex flex-col justify-center gap-8'>
                 {
                     myToys.map((toy,index)=><MyToysCard handleDelete={handleDelete} key={index} toy={toy}></MyToysCard>)
                 }
