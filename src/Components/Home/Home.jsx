@@ -92,15 +92,19 @@ const Home = () => {
                     }
 
                 </div>
-                <div>
+                {
+                    uniqueSubCategoriesArray.length>0 ? <div>
                     <hr />
-                </div>
+                </div> : <></>
+                }
+                
                 {/* data showing */}
                 <div>
                     <h1>Your selected toys</h1>
                     <div className='flex flex-wrap justify-center mx-auto mt-24 gap-8 md:gap-24'>
                         {
                            subCategoriesToys.length>0 ? subCategoriesToys.map(data=><Toys key={data._id} data={data}></Toys>) : toyBycategory.map(data=><Toys key={data._id} data={data}></Toys>)
+                           
                         }
                     </div>
                 </div>

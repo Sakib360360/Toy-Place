@@ -14,6 +14,8 @@ const AddToy = () => {
         const rating = form.rating.value;
         const picture = form.url.value;
         const postedBy = form.email.value;
+        const quantity = form.quantity.value;
+        const details = form.details.value;
         const newToy = { 
             
             "category":category,
@@ -22,7 +24,9 @@ const AddToy = () => {
             "name":name,
             "price":price,
             "picture":picture,
-            "rating":rating
+            "rating":rating,
+            "quantity":quantity,
+            "details":details
 
 
         }
@@ -100,7 +104,7 @@ const AddToy = () => {
                         </label>
                         <label className="input-group ">
 
-                            <input type="text" placeholder="Email" defaultValue={user?.email} name='email' className="input w-full input-bordered" />
+                            <input type="text" placeholder="Email" value={user?.email} name='email' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
@@ -117,13 +121,36 @@ const AddToy = () => {
                 {/* photourl */}
                 <div className='flex mb-8 '>
 
-                    <div className="form-control w-full ml-4">
+                    <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
                         <label className="input-group ">
 
                             <input type="text" placeholder="Photo URL" defaultValue={'https://media.istockphoto.com/id/1024366752/photo/red-toy-car-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=fruDDTOFbc6zDsqUoftbi3G78GkkSrE5ewPnij72jU4='} name='url' className="input w-full input-bordered" />
+                        </label>
+                    </div>
+                    <div className="form-control w-1/2 ml-4">
+                        <label className="label">
+                            <span className="label-text">Quantity</span>
+                        </label>
+                        <label className="input-group ">
+
+                            <input type="number" placeholder="Rating" defaultValue={1} name='quantity' className="input w-full input-bordered" />
+                        </label>
+                    </div>
+
+                </div>
+                <div className='flex mb-8 '>
+
+                    
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text">Details</span>
+                        </label>
+                        <label className="input-group ">
+
+                            <input type="text" placeholder="Details" defaultValue={'No details available'} name='details' className="input w-full  input-bordered" />
                         </label>
                     </div>
 
