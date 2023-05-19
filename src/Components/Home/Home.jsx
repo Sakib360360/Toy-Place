@@ -16,7 +16,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allToys')
+        fetch('https://toy-place-server.vercel.app/allToys')
             .then(res => res.json())
             .then(data => {
 
@@ -34,7 +34,7 @@ const Home = () => {
 
     const handleSubCategory = (name) => {
         console.log(name)
-        fetch(`http://localhost:5000/allToysBy/${name}`)
+        fetch(`https://toy-place-server.vercel.app/allToysBy/${name}`)
             .then(res => res.json())
             .then(data => {
 
@@ -48,7 +48,7 @@ const Home = () => {
     // toys by subcategories
     const handleSubCategoryToys = (name) => {
         console.log(name)
-        fetch(`http://localhost:5000/allToysBySub/${name}`)
+        fetch(`https://toy-place-server.vercel.app/allToysBySub/${name}`)
             .then(res => res.json())
             .then(data => {
 

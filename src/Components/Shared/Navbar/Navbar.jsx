@@ -3,18 +3,18 @@ import './Navbar.css'
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
 import logo from '../../../../public/logo.png'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Navbar = () => {
-    const { user,logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const navigate = useNavigate()
-    const signOut = () =>{
+    const signOut = () => {
         logOut()
             .then()
         navigate('/')
             .catch(error => console.log(error))
-        
+
     }
     return (
         <>
@@ -39,38 +39,49 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/allToys'>All Toys</Link></li>
+                        <li><NavLink className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "active" : ""
+                        } to='/'>Home</NavLink></li>
+                        <li><NavLink className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "active" : ""
+                        } to='/allToys'>All Toys</NavLink></li>
 
                         {
-                            user && <><li><Link to='/myToys'>My Toys</Link></li>
-                                <li><Link to='/addToy'>Add A Toy</Link></li></>
+                            user && <><li><NavLink className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                            } to='/myToys'>My Toys</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                } to='/addToy'>Add A Toy</NavLink></li></>
                         }
-                        <li><Link to='/blogs'>Blogs</Link></li>
+                        <li><NavLink className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "active" : ""
+                        } to='/blogs'>Blogs</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
 
                     {
-                        user ? <>
+                        user ? <div>
                             <div>
                                 <ul className='menu menu-horizontal px-1'>
                                     <li><button onClick={signOut}>Log Out</button></li>
                                 </ul>
                             </div>
-                            {
-                                user.photoUrl && <a data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}> <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src={user?.photoURL} />
-                                </div>
-                            </label><Tooltip id="my-tooltip" /></a>
-                            }
 
-                        </> :<div>
-                                <ul className='menu menu-horizontal px-1'>
-                                    <li><Link to='/login'>Login</Link></li>
-                                </ul>
+
+                        </div> : <div>
+                            <ul className='menu menu-horizontal px-1'>
+                                <li><Link to='/login'>Login</Link></li>
+                            </ul>
+                        </div>
+                    }
+                    {
+                        user?.photoURL && <a data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}> <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={user?.photoURL} />
                             </div>
+                        </label><Tooltip id="my-tooltip" /></a>
                     }
                 </div>
             </div>

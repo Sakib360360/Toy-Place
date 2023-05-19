@@ -1,0 +1,12 @@
+@keyframes borderHover {
+    0% {
+      transform: translate(-100%, -100%);
+    }
+    100% {
+      transform: translate(100%, 100%);
+    }
+  }
+  
+  .button:hover .animate-border-hover {
+    animation: borderHover 1.5s infinite;
+  }

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const {user} = useContext(AuthContext)
@@ -16,6 +17,7 @@ const AddToy = () => {
         const postedBy = form.email.value;
         const quantity = form.quantity.value;
         const details = form.details.value;
+        const sellerName = form.sellerName.value;
         const newToy = { 
             
             "category":category,
@@ -26,13 +28,14 @@ const AddToy = () => {
             "picture":picture,
             "rating":rating,
             "quantity":quantity,
-            "details":details
+            "details":details,
+            "sellerName":sellerName
 
 
         }
         console.log(newToy)
 
-        fetch('http://localhost:5000/addToy', {
+        fetch('https://toy-place-server.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +45,13 @@ const AddToy = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('added')
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Successfully added',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                 }
             })
 
@@ -51,7 +60,7 @@ const AddToy = () => {
 
     return (
         <div className=' flex justify-center'>
-            <form action="" onSubmit={handleAddToy}>
+            <form onSubmit={handleAddToy}>
                 {/* form row */}
                 <div className='flex mb-8 '>
                     <div className="form-control w-1/2">
@@ -109,13 +118,14 @@ const AddToy = () => {
                     </div>
                     <div className="form-control w-1/2 ml-4">
                         <label className="label">
-                            <span className="label-text">Rating</span>
+                            <span className="label-text">Seller name</span>
                         </label>
                         <label className="input-group ">
 
-                            <input type="text" placeholder="Rating" defaultValue={'4.2'} name='rating' className="input w-full input-bordered" />
+                            <input type="text" placeholder="Seller Name" value={user?.displayName} name='sellerName' className="input w-full input-bordered" />
                         </label>
                     </div>
+                    
 
                 </div>
                 {/* photourl */}
@@ -143,8 +153,16 @@ const AddToy = () => {
                 </div>
                 <div className='flex mb-8 '>
 
-                    
-                    <div className="form-control w-full ">
+                <div className="form-control w-1/2 ml-4">
+                        <label className="label">
+                            <span className="label-text">Rating</span>
+                        </label>
+                        <label className="input-group ">
+
+                            <input type="text" placeholder="Rating" defaultValue={'4.2'} name='rating' className="input w-full input-bordered" />
+                        </label>
+                    </div>
+                    <div className="form-control w-1/2 ml-4">
                         <label className="label">
                             <span className="label-text">Details</span>
                         </label>
