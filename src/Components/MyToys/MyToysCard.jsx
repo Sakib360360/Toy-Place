@@ -2,30 +2,49 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const MyToysCard = ({ toy,handleDelete }) => {
-    const { price,subCategory, name,rating,quantity, category, postedBy, details, picture, _id } = toy
-    
-    
+const MyToysCard = ({ toy, handleDelete, index }) => {
+    const { price, subCategory, name, rating, quantity, category, postedBy, details, picture, _id } = toy
+
+
     return (
-        <div className="card card-side bg-slate-300 border-2 h-48 md:h-80  w-full">
-            <figure><img src={picture} alt="toy" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">Toy Name: {name}</h2>
-                <p>Category:{category}</p>
-                <p>Subcategory:{subCategory}</p>
-                <p>Price:{price}</p>
-                <p>Seller:{postedBy}</p>
-                <p>Quantity:{!quantity? '0':quantity}</p>
-                <p>Rating:{rating}</p>
-                <p>{details}</p>
-                
-                <div className="card-actions justify-end">
-                    <Link to={`/updateToy/${_id}`}>Edit</Link>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-danger">Delete</button>
+        <tr>
+            <td className='border-l-2'>{index+1}</td>
+            <td className='border-l-2'>
+
+                <div className="flex items-center space-x-3">
+
+                    <div className="">
+                        <div className="rounded-full w-12 h-12">
+                            <img className='' src={picture} alt="Toy" />
+                        </div>
+                    </div>
+                    <div>
+                        <div className="font-bold">{name}</div>
+
+                    </div>
                 </div>
-            </div>
-        </div>
+            </td>
+            <td className='border-l-2 border-r-2'>{postedBy}</td>
+            <td>
+
+
+                <span className="badge badge-ghost badge-sm">{price}$</span>
+            </td>
+            <td className='border-l-2 border-r-2'>{category}</td>
+            <td>{subCategory}</td>
+            <td className='border-l-2 border-r-2'>{quantity}</td>
+
+            <td className=' border-r-2'>
+                <button className="btn btn-outline btn-success"><Link to={`/updateToy/${_id}`}>Update</Link></button>
+
+
+            </td>
+            <td className='border-r-2'><button onClick={() => handleDelete(_id)} className="btn btn-outline btn-error">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button></td>
+        </tr>
     );
 };
 
 export default MyToysCard;
+

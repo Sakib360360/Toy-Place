@@ -5,16 +5,16 @@ import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
 
 const MyToys = () => {
-    const {user} = useContext(AuthContext)
-    const [myToys,setMyToys]= useState([])
+    const { user } = useContext(AuthContext)
+    const [myToys, setMyToys] = useState([])
     useTitle('Toy-Place|my-toys')
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`https://toy-place-server.vercel.app/myToys/${user.email}`)
-        .then(res=>res.json())
-        .then(data=>{
-            setMyToys(data)
-        })
-    },[])
+            .then(res => res.json())
+            .then(data => {
+                setMyToys(data)
+            })
+    }, [])
 
     const handleDelete = (id) => {
 
@@ -38,13 +38,13 @@ const MyToys = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
-                        if(data.deletedCount>0){
+                        if (data.deletedCount > 0) {
                             Swal.fire('Deleted!', '', 'success')
-                            const newMyToys = myToys.filter(toy=>toy._id!==id)
+                            const newMyToys = myToys.filter(toy => toy._id !== id)
                             setMyToys(newMyToys)
                         }
                     })
-                
+
             } else if (result.isDenied) {
                 Swal.fire('Try again', '', 'info')
             }
@@ -52,10 +52,10 @@ const MyToys = () => {
     }
     const sortedToysLowestToHighest = [...myToys].sort((a, b) => a.price - b.price);
     const sortedToysHighestToLowes = [...myToys].sort((a, b) => b.price - a.price);
-    const handleSortLowestToHighest = () =>{
+    const handleSortLowestToHighest = () => {
         setMyToys(sortedToysLowestToHighest)
     }
-    const handleSortHighestToLowest = () =>{
+    const handleSortHighestToLowest = () => {
         setMyToys(sortedToysHighestToLowes)
     }
     console.log(myToys)
@@ -66,11 +66,35 @@ const MyToys = () => {
                 <button onClick={handleSortLowestToHighest} className='px-2 border-2 py-1'>Lowest to Highest</button>
                 <button onClick={handleSortHighestToLowest} className='px-2 border-2 py-1'>Highest to Lowest</button>
             </div>
-            <div className='flex flex-col justify-center gap-8'>
-                {
-                    myToys.map((toy,index)=><MyToysCard handleDelete={handleDelete} key={index} toy={toy}></MyToysCard>)
-                }
+            <div className="overflow-x-auto w-full mb-8">
+                
+                <table className="table w-full border-b-2">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Toy</th>
+                            <th>Seller</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Subcategory</th>
+                            <th>Quantity</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            myToys.map((toy, index) => <MyToysCard handleDelete={handleDelete} key={index} toy={toy} index={index}></MyToysCard>)
+                        }
+
+                    </tbody>
+
+
+                </table>
             </div>
+            
         </div>
     );
 };
