@@ -11,7 +11,8 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const Testimonilas = () => {
     return (
-        <div className='w-11/12 md:w-4/5 mx-auto rounded '>
+        <div data-aos="fade-up"
+        data-aos-duration="3000" className='w-11/12 md:w-4/5 mx-auto rounded '>
             <div className=" py-10 px-4">
                 <div data-aos="zoom-in-up">
                     <h2 className="text-3xl font-bold text-secondary mb-8 text-center">
