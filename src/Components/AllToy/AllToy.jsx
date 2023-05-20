@@ -6,6 +6,7 @@ import AllToysTabular from './AllToysTabular';
 const AllToy = () => {
     const [allToys, setAllToys] = useState([])
     const [searchText, setSearchText] = useState(null)
+    const [loading,setLoading] = useState(true)
     useTitle('Toy-Place|all-toy')
     const [searchedToy, setSearchedToy] = useState([])
     const handleSearch = (e) => {
@@ -18,6 +19,9 @@ const AllToy = () => {
             .then(res => res.json())
             .then(data => {
                 searchText.length>0 && setAllToys(data)
+                if(data.length>0){
+                    setLoading(false)
+                }
             })
     }, [searchText])
     useEffect(() => {
@@ -26,6 +30,9 @@ const AllToy = () => {
             .then(data => {
 
                 setAllToys(data)
+                if(data.length>0){
+                    setLoading(false)
+                }
             })
     }, [])
     
@@ -35,6 +42,9 @@ const AllToy = () => {
             .then(data => {
 
                 searchText.length <=0 && setAllToys(data)
+                if(data.length>0){
+                    setLoading(false)
+                }
             })
     }, [searchText])
     return (
@@ -50,6 +60,10 @@ const AllToy = () => {
                     </div>
                 </div>
             </div>
+            {/* loading state */}
+            {
+                loading && <div className='flex justify-center items-center my-8'><progress className="progress w-56"></progress></div>
+            }
             {/* all toys showing */}
             <div className="overflow-x-auto mt-8 w-full mb-8">
 

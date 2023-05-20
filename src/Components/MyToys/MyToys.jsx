@@ -7,12 +7,16 @@ import useTitle from '../../Hooks/useTitle';
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
+    const [loading,setLoading] = useState(true)
     useTitle('Toy-Place|my-toys')
     useEffect(() => {
         fetch(`https://toy-place-server.vercel.app/myToys/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyToys(data)
+                if(data.length>0){
+                    setLoading(false)
+                }
             })
     }, [])
     const handleFocus = (event) => {
@@ -75,6 +79,10 @@ const MyToys = () => {
                 <button onFocus={handleFocus}
                     onBlur={handleBlur} onClick={handleSortHighestToLowest} className='px-2 border-2 py-1'>Highest to Lowest</button>
             </div>
+            {/* loading state */}
+            {
+                loading && <div className='flex justify-center items-center my-8'><progress className="progress w-56"></progress></div>
+            }
             <div className="overflow-x-auto w-full mb-8">
 
                 <table className="table w-full border-b-2">

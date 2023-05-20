@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 AOS.init();
 
 const Toys = ({ data }) => {
-    const { price, subCategory, name, rating, quantity, category, postedBy, details, picture, _id } = data
+    const { price, name, rating,  picture, _id } = data
+    const {user} = useContext(AuthContext)
+    const handleDetailsButton =()=>{
+        user || Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'You must login',
+            showConfirmButton: false,
+            timer: 1000
+          })
+        }
     return (
         <div data-aos="flip-right">
             <div className="card w-96 bg-base-100 shadow-sm border-2 ">
@@ -13,14 +25,13 @@ const Toys = ({ data }) => {
                 <hr />
                 <div className="card-body">
                     <h2 className="card-title">Name: {name}</h2>
-                    <p>Category: {category}</p>
-                    <p>Subcategory: {subCategory}</p>
+                    
                     <p>Price: {price}</p>
-                    <p>Quantity available: {!quantity ? '0' : quantity}</p>
+                    
                     <p>Rating: {rating}</p>
 
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary"><Link to={`/toyDetails/${_id}`}>Details</Link></button>
+                        <button onClick={handleDetailsButton} className="btn btn-primary btn-outline"><Link to={`/toyDetails/${_id}`}>Details</Link></button>
                     </div>
                 </div>
             </div>

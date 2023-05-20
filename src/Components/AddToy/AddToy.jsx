@@ -62,25 +62,25 @@ const AddToy = () => {
 
     return (
         <div className=' flex justify-center'>
-            <form onSubmit={handleAddToy}>
+            <form className='border-2 p-4 m-4 rounded-lg' onSubmit={handleAddToy}>
                 {/* form row */}
                 <div className='flex mb-8 '>
                     <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text">Toy name</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input defaultValue={'car'} type="text" placeholder="Toy name" name='name' className="input w-full input-bordered" />
+                            <input defaultValue={''} type="text" placeholder="Toy name" name='name' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input type="text" placeholder="Price" defaultValue={'7'} name='price' className="input w-full input-bordered" />
+                            <input type="text" placeholder="Price" defaultValue={''} name='price' className="input w-full input-bordered" />
                         </label>
                     </div>
 
@@ -91,18 +91,18 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Category</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input type="text" placeholder="Category" defaultValue={'vehicle'} name='category' className="input w-full input-bordered" />
+                            <input type="text" placeholder="Category" defaultValue={''} name='category' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
                         <label className="label">
                             <span className="label-text">sub-category</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input type="text" placeholder="sub-category" defaultValue={'car'} name='SubCategory' className="input w-full input-bordered" />
+                            <input type="text" placeholder="sub-category" defaultValue={''} name='SubCategory' className="input w-full input-bordered" />
                         </label>
                     </div>
 
@@ -113,7 +113,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
                             <input type="text" placeholder="Email" value={user?.email} name='email' className="input w-full input-bordered" />
                         </label>
@@ -122,7 +122,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Seller name</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
                             <input type="text" placeholder="Seller Name" value={user?.displayName} name='sellerName' className="input w-full input-bordered" />
                         </label>
@@ -137,46 +137,46 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input type="text" placeholder="Photo URL" defaultValue={'https://media.istockphoto.com/id/1024366752/photo/red-toy-car-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=fruDDTOFbc6zDsqUoftbi3G78GkkSrE5ewPnij72jU4='} name='url' className="input w-full input-bordered" />
+                            <input type="text" placeholder="Photo URL"  name='url' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
                         <label className="label">
                             <span className="label-text">Quantity</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input type="number" placeholder="Rating" defaultValue={1} name='quantity' className="input w-full input-bordered" />
+                            <input type="number" placeholder="Quantity Available"  name='quantity' className="input w-full input-bordered" />
                         </label>
                     </div>
 
                 </div>
                 <div className='flex mb-8 '>
 
-                <div className="form-control w-1/2 ml-4">
+                <div className="form-control w-1/2 ">
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input type="text" placeholder="Rating" defaultValue={'4.2'} name='rating' className="input w-full input-bordered" />
+                            <input type="text" placeholder="Rating"  name='rating' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
                         <label className="label">
                             <span className="label-text">Details</span>
                         </label>
-                        <label className="input-group ">
+                        <label className=" ">
 
-                            <input type="text" placeholder="Details" defaultValue={'No details available'} name='details' className="input w-full  input-bordered" />
+                            <input type="text" placeholder="Details"  name='details' className="input w-full  input-bordered" />
                         </label>
                     </div>
 
                 </div>
                 <div>
-                    <input type="submit" className="btn btn-block" />
+                    <input type="submit" className="btn btn-block btn-outline" />
 
                 </div>
             </form>

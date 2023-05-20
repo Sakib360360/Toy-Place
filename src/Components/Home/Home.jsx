@@ -91,6 +91,10 @@ const Home = () => {
             <div >
                 <Bannar></Bannar>
             </div>
+            {/* gallery */}
+            <div>
+                <GallerySection></GallerySection>
+            </div>
             <div className=' my-12 '>
                 <h1 data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
@@ -153,16 +157,15 @@ const Home = () => {
 
                 </div>
                 {/* testimonials */}
-            
-            <div>
-                <GallerySection></GallerySection>
-            </div>
-            <div className='mt-8 mb-8 h-96 mx-auto flex justify-center'>
-                <Testimonials></Testimonials>
-            </div>
+
+
+                <div className='mt-8 mb-8 h-96 mx-auto flex justify-center'>
+                    <Testimonials></Testimonials>
+                </div>
+
             </div>
 
-            
+
 
         </>
     );

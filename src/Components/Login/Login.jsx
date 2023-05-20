@@ -44,7 +44,7 @@ const Login = () => {
         .catch(error => {
             
             if(error.message === "Firebase: Error (auth/wrong-password)."){
-                setError('Mismatch!!! Please enter right Email Address and password')
+                setError('Please enter right Email Address and password')
             }
             else{
                 setError(error.message)
@@ -56,15 +56,15 @@ const Login = () => {
         <div>
 
             <section className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
-                <div className="md:w-1/3 max-w-sm">
+                <div className="md:w-1/3 max-w-sm ">
                     <Lottie animationData={animLogin}></Lottie>
                 </div>
-                <div className="md:w-1/3 max-w-sm">
+                <div className="md:w-1/3 max-w-sm border-sky-600 border-2 p-4 rounded-lg">
                     <form onSubmit={handleSignInWithEmail}>
                         <div className="text-center md:text-left">
                             <label className="mr-1">Sign in with</label>
 
-                            <button onClick={handleGoogleSignIn} className="btn bg-blue-600 mt-4 btn-block" type='button'><FaGoogle className='ml-2 mr-2'></FaGoogle>Google</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary mt-4 btn-block" type='button'><FaGoogle className='ml-2 mr-2'></FaGoogle>Google</button>
 
                         </div>
                         <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
