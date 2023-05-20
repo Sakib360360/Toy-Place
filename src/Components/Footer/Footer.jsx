@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className="bg-[url('https://www.pngkey.com/png/detail/259-2598287_share-discounts-christmas-header-and-footer.png')] bg-no-repeat mt-32 bg-cover">
+        <div className="bg-[url('https://www.pngkey.com/png/detail/259-2598287_share-discounts-christmas-header-and-footer.png')] bg-no-repeat md:mt-32 bg-cover mt-[800px]">
             <footer className="footer  p-10  text-base-content">
                 <div>
                     <span className="footer-title">Services</span>

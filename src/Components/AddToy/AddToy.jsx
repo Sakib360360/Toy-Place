@@ -71,7 +71,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input defaultValue={''} type="text" placeholder="Toy name" name='name' className="input w-full input-bordered" />
+                            <input defaultValue={''} required type="text" placeholder="Toy name" name='name' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
@@ -80,7 +80,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="Price" defaultValue={''} name='price' className="input w-full input-bordered" />
+                            <input required type="text" placeholder="Price" defaultValue={''} name='price' className="input w-full input-bordered" />
                         </label>
                     </div>
 
@@ -93,7 +93,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="Category" defaultValue={''} name='category' className="input w-full input-bordered" />
+                            <input required type="text" placeholder="Category" defaultValue={''} name='category' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
@@ -102,7 +102,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="sub-category" defaultValue={''} name='SubCategory' className="input w-full input-bordered" />
+                            <input required type="text" placeholder="sub-category" defaultValue={''} name='SubCategory' className="input w-full input-bordered" />
                         </label>
                     </div>
 
@@ -115,7 +115,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="Email" value={user?.email} name='email' className="input w-full input-bordered" />
+                            <input required type="text" placeholder="Email" value={user?.email} name='email' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
@@ -124,7 +124,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="Seller Name" value={user?.displayName} name='sellerName' className="input w-full input-bordered" />
+                            <input required type="text" placeholder="Seller Name" value={user?.displayName} name='sellerName' className="input w-full input-bordered" />
                         </label>
                     </div>
                     
@@ -139,7 +139,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="Photo URL"  name='url' className="input w-full input-bordered" />
+                            <input required type="text" placeholder="Photo URL"  name='url' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
@@ -148,7 +148,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="number" placeholder="Quantity Available"  name='quantity' className="input w-full input-bordered" />
+                            <input required type="number" placeholder="Quantity Available"  name='quantity' className="input w-full input-bordered" />
                         </label>
                     </div>
 
@@ -161,7 +161,7 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="Rating"  name='rating' className="input w-full input-bordered" />
+                            <input required type="text" placeholder="Rating"  name='rating' className="input w-full input-bordered" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">
@@ -170,13 +170,13 @@ const AddToy = () => {
                         </label>
                         <label className=" ">
 
-                            <input type="text" placeholder="Details"  name='details' className="input w-full  input-bordered" />
+                            <input required type="text" placeholder="Details"  name='details' className="input w-full  input-bordered" />
                         </label>
                     </div>
 
                 </div>
                 <div>
-                    <input type="submit" className="btn btn-block btn-outline" />
+                    <input required type="submit" className="btn btn-block btn-outline" />
 
                 </div>
             </form>

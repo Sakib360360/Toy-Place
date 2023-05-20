@@ -6,7 +6,9 @@ import AllToysTabular from './AllToysTabular';
 const AllToy = () => {
     const [allToys, setAllToys] = useState([])
     const [searchText, setSearchText] = useState(null)
+    const [open, setOpen] = useState(true)
     const [loading,setLoading] = useState(true)
+    const [limit, setLimit] = useState(20)
     useTitle('Toy-Place|all-toy')
     const [searchedToy, setSearchedToy] = useState([])
     const handleSearch = (e) => {
@@ -25,16 +27,19 @@ const AllToy = () => {
             })
     }, [searchText])
     useEffect(() => {
-        fetch('https://toy-place-server.vercel.app/allToys')
-            .then(res => res.json())
-            .then(data => {
 
-                setAllToys(data)
+        fetch(`https://toy-place-server.vercel.app/allToys?limit=${limit}`)
+            .then(response => response.json())
+            .then(data => {
+                setAllToys(data);
                 if(data.length>0){
                     setLoading(false)
                 }
             })
-    }, [])
+            .catch(error => {
+                console.error(error);
+            });
+    }, [limit]);
     
     useEffect(() => {
         fetch('https://toy-place-server.vercel.app/allToys')
@@ -47,6 +52,10 @@ const AllToy = () => {
                 }
             })
     }, [searchText])
+    const handleShowAll = () => {
+        setLimit(100000)
+        setOpen(!open)
+    }
     return (
         <div>
             {/* search */}
@@ -93,6 +102,13 @@ const AllToy = () => {
 
                 </table>
             </div>
+            {/* button for show all */}
+            <div className='flex justify-center my-8'>
+                    {
+                        open && <button onClick={handleShowAll} className='btn btn-outline btn-secondary'>Show All</button>
+                    }
+
+                </div>
         </div>
     );
 };
