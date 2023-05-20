@@ -11,21 +11,27 @@ const Home = () => {
     const [subCategoriesToys, setSubcategoriesToys] = useState([])
     useTitle('Toy-Place|home')
     const [loadingg, setLoadingg] = useState(true)
+    const [limit,setLimit] = useState(2)
     const [toyBycategory, setToyByCategory] = useState([])
+    const [open,setOpen] = useState(true)
 
     // const categoriesList = [];
     const categoriesList = new Set();
     const subCategoriesList = new Set()
 
-
     useEffect(() => {
-        fetch('https://toy-place-server.vercel.app/allToys')
-            .then(res => res.json())
-            .then(data => {
+        
+        fetch(`https://toy-place-server.vercel.app/allToys?limit=${limit}`)
+          .then(response => response.json())
+          .then(data => {
+            setAllToys(data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }, [limit]);
 
-                setAllToys(data)
-            })
-    }, [])
+      
     allToys.forEach(object => categoriesList.add(object.category));
     toyBycategory.forEach(object => subCategoriesList.add(object.subCategory));
 
@@ -70,6 +76,10 @@ console.log(toyBycategory)
       const handleBlur = (event) => {
         event.target.style.backgroundColor = '#FFFFFF';
       };
+      const handleShowAll =()=>{
+        setLimit(100000)
+        setOpen(!open)
+      }
     return (
         <>
 
@@ -117,7 +127,7 @@ console.log(toyBycategory)
                     <div className='flex flex-wrap justify-center mx-auto mt-24 gap-8 md:gap-24'>
                        
                     {
-                        subCategoriesToys.length < 1 && toyBycategory.length <1 ? allToys.slice(0,10).map(data=><Toys key={data._id} data={data}></Toys>):<></>
+                        subCategoriesToys.length < 1 && toyBycategory.length <1 ? allToys.map(data=><Toys key={data._id} data={data}></Toys>):<></>
                     }
                     </div>
                     
@@ -127,6 +137,13 @@ console.log(toyBycategory)
 
                         }
                     </div>
+                </div>
+                {/* button for show all */}
+                <div className='flex justify-center my-8'>
+                    {
+                        open && <button onClick={handleShowAll} className='btn'>Show All</button>
+                    }
+                    
                 </div>
             </div>
 
