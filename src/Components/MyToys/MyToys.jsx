@@ -15,6 +15,13 @@ const MyToys = () => {
                 setMyToys(data)
             })
     }, [])
+    const handleFocus = (event) => {
+        event.target.style.backgroundColor = '#dfe6ed';
+    };
+
+    const handleBlur = (event) => {
+        event.target.style.backgroundColor = '#FFFFFF';
+    };
 
     const handleDelete = (id) => {
 
@@ -63,11 +70,13 @@ const MyToys = () => {
         <div className='max-w-6xl'>
             <div className='flex justify-center items-center my-8'>
                 <h1 className='px-2'>Sort by price</h1>
-                <button onClick={handleSortLowestToHighest} className='px-2 border-2 py-1'>Lowest to Highest</button>
-                <button onClick={handleSortHighestToLowest} className='px-2 border-2 py-1'>Highest to Lowest</button>
+                <button onFocus={handleFocus}
+                    onBlur={handleBlur} onClick={handleSortLowestToHighest} className='px-2 border-2 py-1'>Lowest to Highest</button>
+                <button onFocus={handleFocus}
+                    onBlur={handleBlur} onClick={handleSortHighestToLowest} className='px-2 border-2 py-1'>Highest to Lowest</button>
             </div>
             <div className="overflow-x-auto w-full mb-8">
-                
+
                 <table className="table w-full border-b-2">
                     {/* head */}
                     <thead>
@@ -94,7 +103,7 @@ const MyToys = () => {
 
                 </table>
             </div>
-            
+
         </div>
     );
 };

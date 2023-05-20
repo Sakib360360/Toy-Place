@@ -115,13 +115,7 @@ console.log(toyBycategory)
                 {/* data showing */}
                 <div>
                     <div className='flex flex-wrap justify-center mx-auto mt-24 gap-8 md:gap-24'>
-                        {/* {
-                        subCategoriesToys.length<1 && <>
-                        {
-                            allToys.slice(0,10).map(data=><Toys key={data._id} data={data}></Toys>)
-                        }
-                        </>
-                    } */}
+                       
                     {
                         subCategoriesToys.length < 1 && toyBycategory.length <1 ? allToys.slice(0,10).map(data=><Toys key={data._id} data={data}></Toys>):<></>
                     }
