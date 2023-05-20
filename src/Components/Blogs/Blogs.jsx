@@ -1,13 +1,13 @@
 import React from 'react';
 import useTitle from '../../Hooks/useTitle';
 
-const Gallery = () => {
-    useTitle('Toy-Place|gallery')
+const Blogs = () => {
+    useTitle('Toy-Place|blogs')
     return (
         <div>
-            
+            blog is coming
         </div>
     );
 };
 
-export default Gallery;
+export default Blogs;

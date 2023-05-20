@@ -4,11 +4,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import animReg from '../../Animation/86974-registration.json'
 import Lottie from 'lottie-react'
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
+    useTitle('Toy-Place|register')
     const location = useLocation()
 
     const navigate = useNavigate()

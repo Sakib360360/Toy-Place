@@ -5,12 +5,14 @@ import { FaGoogle } from "react-icons/fa";
 import animLogin from '../../Animation/106680-login-and-sign-up.json'
 import Lottie from 'lottie-react'
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 
 
 
 const Login = () => {
     const [error, setError] = useState(null)
+    useTitle('Toy-Place|login')
     const location = useLocation()
     console.log(location)
     const from = location?.state?.from?.pathname || '/'

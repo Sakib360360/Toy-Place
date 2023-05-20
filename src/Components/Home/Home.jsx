@@ -3,11 +3,13 @@ import 'react-tabs/style/react-tabs.css';
 import Toys from './Toys';
 import './Home.css'
 import Bannar from './Bannar';
+import useTitle from '../../Hooks/useTitle';
 
 const Home = () => {
 
     const [allToys, setAllToys] = useState([])
     const [subCategoriesToys, setSubcategoriesToys] = useState([])
+    useTitle('Toy-Place|home')
     const [loadingg, setLoadingg] = useState(true)
     const [toyBycategory, setToyByCategory] = useState([])
 

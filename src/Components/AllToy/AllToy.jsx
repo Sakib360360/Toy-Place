@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Toys from '../Home/Toys';
+import useTitle from '../../Hooks/useTitle';
 
 const AllToy = () => {
     const [allToys, setAllToys] = useState([])
     const [searchText,setSearchText] = useState(null)
+    useTitle('Toy-Place|all-toy')
     const [searchedToy,setSearchedToy] = useState([])
     const handleSearch = (e) =>{
         setSearchText(e.target.value)
