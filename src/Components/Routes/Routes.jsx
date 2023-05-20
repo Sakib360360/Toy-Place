@@ -10,9 +10,9 @@ import AllToy from '../AllToy/AllToy';
 import PrivateRoutes from './PrivateRoutes';
 import MyToys from '../MyToys/MyToys';
 import ToyDetails from '../ToyDetails/ToyDetails';
-import Gallery from '../Gallery/Gallery';
 import UpdateToy from '../UpdateToy/UpdateToy';
 import Blogs from '../Blogs/Blogs';
+import GallerySection from '../Gallery/GallerySection';
 
 
 const Routes = createBrowserRouter([
@@ -60,7 +60,7 @@ const Routes = createBrowserRouter([
             {
                 path:'/gallery',
                 errorElement:<ErrorPage></ErrorPage>,
-                element:<Gallery></Gallery>
+                element:<GallerySection></GallerySection>
             },
             {
                 path:'/updateToy/:id',

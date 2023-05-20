@@ -7,6 +7,7 @@ import useTitle from '../../Hooks/useTitle';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Testimonials from '../Testimonials/Testimonials';
+import GallerySection from '../Gallery/GallerySection';
 AOS.init();
 
 const Home = () => {
@@ -93,7 +94,7 @@ const Home = () => {
             <div className=' my-12 '>
                 <h1 data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000" class="wave-title font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
+                    data-aos-duration="2000" class=" text-primary font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
                 <div className='flex max-w-5xl flex-wrap '>
                     {
                         uniqueCategoriesArray.map(item => {
@@ -147,11 +148,15 @@ const Home = () => {
                 {/* button for show all */}
                 <div className='flex justify-center my-8'>
                     {
-                        open && <button onClick={handleShowAll} className='btn'>Show All</button>
+                        open && <button onClick={handleShowAll} className='btn btn-outline btn-secondary'>Show All</button>
                     }
 
                 </div>
                 {/* testimonials */}
+            
+            <div>
+                <GallerySection></GallerySection>
+            </div>
             <div className='mt-8 mb-8 h-96 mx-auto flex justify-center'>
                 <Testimonials></Testimonials>
             </div>

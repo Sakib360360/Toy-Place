@@ -14,7 +14,7 @@ const Testimonilas = () => {
         <div className='w-11/12 md:w-4/5 mx-auto rounded '>
             <div className=" py-10 px-4">
                 <div data-aos="zoom-in-up">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                    <h2 className="text-3xl font-bold text-secondary mb-8 text-center">
                         See what our users say
                     </h2>
                 </div>
@@ -33,7 +33,7 @@ const Testimonilas = () => {
                                     John Calleo
                                 </p>
                             </div>
-                            <p className="text-gray-800 mb-4 text-lg">
+                            <p className="text-gray-800 mb-4 text-lg w-4/5 text-center">
                                 "Toy-Place is a top-notch toy selling website that caters to children of all ages. Their vast collection boasts a diverse range of high-quality toys, from timeless classics to cutting-edge trends. With its user-friendly interface, navigating the website is a breeze, allowing you to find your desired toys quickly. all your toy needs. Explore their virtual aisles and delight in the joy of finding the perfect toy for your little ones."
                             </p>
 
@@ -47,9 +47,9 @@ const Testimonilas = () => {
                                     Jon Smith
                                 </p>
                             </div>
-                            <p className="text-gray-800 mb-4 text-lg">
+                            <p className="text-gray-800 mb-4 text-lg w-4/5 text-center">
 
-                                "Toy-Place is a paradise for toy enthusiasts, offering an extensive array of top-notch toys for kids. From educational toys to interactive games and collectibles, their website is a treasure trove of endless fun. With a sleek and intuitive interface, browsing and purchasing toys is a breeze. The prompt customer support and fast shipping make Toy-Place the ultimate go-to destination for fulfilling all your toy desires. Embark on an exciting journey of play and imagination with Toy-Place!"
+                                "Toy-Place is a paradise for toy enthusiasts, offering an extensive array of top-notch toys for kids. From educational toys to interactive games and collectibles, their website is a treasure trove of endless fun. With a sleek and intuitive interface, browsing and  Toy-Place the ultimate go-to destination for fulfilling all your toy desires. Embark on an exciting journey of play and imagination with Toy-Place!"
                             </p>
 
                         </div>
@@ -62,9 +62,9 @@ const Testimonilas = () => {
                                     Alex Hary
                                 </p>
                             </div>
-                            <p className="text-gray-800 mb-4 text-lg">
+                            <p className="text-gray-800 mb-4 text-lg w-4/5 text-center">
 
-                                "Toy-Place is a delightful online toy emporium that brings joy to children of all ages. Their captivating selection features an incredible variety of toys, from imaginative playsets to mind-stimulating puzzles and everything in between. With its user-friendly website design, exploring the world of Playtime Central is a breeze. Fast shipping and responsive customer service ensure a hassle-free experience. Discover the magic of play at Playtime Central, where cherished childhood memories are made."
+                                "Toy-Place is a delightful online toy emporium that brings joy to children of all ages. Their captivating selection features an incredible variety of toys, from imaginative playsets to mind-stimulating puzzles and everything in between. With its user-friendly website design,  customer service ensure a hassle-free experience. Discover the magic of play at Playtime Central, where cherished childhood memories are made."
                             </p>
 
                         </div>
