@@ -77,7 +77,7 @@ const Navbar = () => {
                         </div>
                     }
                     {
-                        user?.photoURL && <a data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}> <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        user?.photoURL && <a className='z-50' data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}> <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src={user?.photoURL} />
                             </div>

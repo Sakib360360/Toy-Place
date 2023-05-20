@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const Toys = ({ data }) => {
     const { price, subCategory, name, rating, quantity, category, postedBy, details, picture, _id } = data
     return (
-        <div>
+        <div data-aos="flip-right">
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure><img src={picture} alt="photo of product" /></figure>
                 <div className="card-body">

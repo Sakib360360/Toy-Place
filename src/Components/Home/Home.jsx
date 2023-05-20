@@ -4,6 +4,10 @@ import Toys from './Toys';
 import './Home.css'
 import Bannar from './Bannar';
 import useTitle from '../../Hooks/useTitle';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Testimonials from '../Testimonials/Testimonials';
+AOS.init();
 
 const Home = () => {
 
@@ -11,27 +15,27 @@ const Home = () => {
     const [subCategoriesToys, setSubcategoriesToys] = useState([])
     useTitle('Toy-Place|home')
     const [loadingg, setLoadingg] = useState(true)
-    const [limit,setLimit] = useState(2)
+    const [limit, setLimit] = useState(20)
     const [toyBycategory, setToyByCategory] = useState([])
-    const [open,setOpen] = useState(true)
+    const [open, setOpen] = useState(true)
 
     // const categoriesList = [];
     const categoriesList = new Set();
     const subCategoriesList = new Set()
 
     useEffect(() => {
-        
-        fetch(`https://toy-place-server.vercel.app/allToys?limit=${limit}`)
-          .then(response => response.json())
-          .then(data => {
-            setAllToys(data);
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }, [limit]);
 
-      
+        fetch(`https://toy-place-server.vercel.app/allToys?limit=${limit}`)
+            .then(response => response.json())
+            .then(data => {
+                setAllToys(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [limit]);
+
+
     allToys.forEach(object => categoriesList.add(object.category));
     toyBycategory.forEach(object => subCategoriesList.add(object.subCategory));
 
@@ -49,7 +53,7 @@ const Home = () => {
                 }
                 setToyByCategory(data)
             })
-console.log(toyBycategory)
+        console.log(toyBycategory)
     }
     // toys by subcategories
     const handleSubCategoryToys = (name) => {
@@ -71,15 +75,15 @@ console.log(toyBycategory)
 
     const handleFocus = (event) => {
         event.target.style.backgroundColor = '#dfe6ed';
-      };
-    
-      const handleBlur = (event) => {
+    };
+
+    const handleBlur = (event) => {
         event.target.style.backgroundColor = '#FFFFFF';
-      };
-      const handleShowAll =()=>{
+    };
+    const handleShowAll = () => {
         setLimit(100000)
         setOpen(!open)
-      }
+    }
     return (
         <>
 
@@ -87,7 +91,9 @@ console.log(toyBycategory)
                 <Bannar></Bannar>
             </div>
             <div className=' my-12 '>
-                <h1 class="wave-title font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
+                <h1 data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000" class="wave-title font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
                 <div className='flex max-w-5xl flex-wrap '>
                     {
                         uniqueCategoriesArray.map(item => {
@@ -103,9 +109,9 @@ console.log(toyBycategory)
                     <hr />
                 </div>
                 {/* subcategory */}
-                
+
                 <div className='flex max-w-5xl flex-wrap mt-4'>
-                
+
                     {
                         uniqueSubCategoriesArray.map((item, index) => {
                             return <>
@@ -125,12 +131,12 @@ console.log(toyBycategory)
                 {/* data showing */}
                 <div>
                     <div className='flex flex-wrap justify-center mx-auto mt-24 gap-8 md:gap-24'>
-                       
-                    {
-                        subCategoriesToys.length < 1 && toyBycategory.length <1 ? allToys.map(data=><Toys key={data._id} data={data}></Toys>):<></>
-                    }
+
+                        {
+                            subCategoriesToys.length < 1 && toyBycategory.length < 1 ? allToys.map(data => <Toys key={data._id} data={data}></Toys>) : <></>
+                        }
                     </div>
-                    
+
                     <div className='flex flex-wrap justify-center mx-auto mt-24 gap-8 md:gap-24'>
                         {
                             subCategoriesToys.length > 0 ? subCategoriesToys.map(data => <Toys key={data._id} data={data}></Toys>) : toyBycategory.map(data => <Toys key={data._id} data={data}></Toys>)
@@ -143,9 +149,15 @@ console.log(toyBycategory)
                     {
                         open && <button onClick={handleShowAll} className='btn'>Show All</button>
                     }
-                    
+
                 </div>
+                {/* testimonials */}
+            <div className='mt-8 mb-8 h-96 mx-auto flex justify-center'>
+                <Testimonials></Testimonials>
             </div>
+            </div>
+
+            
 
         </>
     );
