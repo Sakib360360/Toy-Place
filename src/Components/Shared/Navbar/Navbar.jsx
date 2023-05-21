@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import './Navbar.css'
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
-import logo from '../../../../public/logo.png'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 

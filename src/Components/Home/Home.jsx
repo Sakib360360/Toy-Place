@@ -8,6 +8,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Testimonials from '../Testimonials/Testimonials';
 import GallerySection from '../Gallery/GallerySection';
+import SpecialOffer from '../SpecialOffer/SpecialOffer';
 AOS.init();
 
 const Home = () => {
@@ -98,14 +99,14 @@ const Home = () => {
             <div className=' my-12 '>
                 <h1 data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000" class=" text-primary font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
+                    data-aos-duration="2000" className=" text-primary font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
                 <div className='flex max-w-5xl flex-wrap '>
                     {
-                        uniqueCategoriesArray.map(item => {
-                            return <>
-                                <button onFocus={handleFocus}
+                        uniqueCategoriesArray.map((item,index) => {
+                            return <div key={index}>
+                                <button  onFocus={handleFocus}
                                     onBlur={handleBlur} onClick={() => handleSubCategory(item)} className='border-t-2 border-l-2 px-2 border-r-2 ml-2 rounded-t-lg'>{item}</button>
-                            </>
+                            </div>
                         })
                     }
 
@@ -156,6 +157,8 @@ const Home = () => {
                     }
 
                 </div>
+                {/* special offer */}
+                    <SpecialOffer toy={allToys}></SpecialOffer>
                 {/* testimonials */}
 
 

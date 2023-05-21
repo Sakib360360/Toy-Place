@@ -24,7 +24,6 @@ const UpdateToy = () => {
         const details = form.details.value;
         
         const updateToy = { 
-            
             "category":category,
             "subCategory":SubCategory,
             "postedBy":postedBy,
@@ -34,11 +33,7 @@ const UpdateToy = () => {
             "rating":rating,
             "quantity":quantity,
             "details":details,
-            
-
-
         }
-        console.log(updateToy)
 
         fetch(`https://toy-place-server.vercel.app/updateToy/${_id}`, {
             method: 'PUT',

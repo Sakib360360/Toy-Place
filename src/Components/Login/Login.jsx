@@ -10,22 +10,22 @@ import useTitle from '../../Hooks/useTitle';
 
 
 
-const Login = () => {
-    const [error, setError] = useState(null)
+const Login = () => { 
     useTitle('Toy-Place|login')
     const location = useLocation()
-    console.log(location)
     const from = location?.state?.from?.pathname || '/'
     const navigate = useNavigate()
-    const { signInGoogle,signIn } = useContext(AuthContext)
+    const { signInByGoogle,signIn } = useContext(AuthContext)
+    const [error, setError] = useState(null)
     const handleGoogleSignIn = () => {
-        signInGoogle()
-            .then(result => {
-                const loggedUser = result.user
-                console.log(result.user)
+        signInByGoogle()
+            .then(result => { 
+                const LUser = result.user;
                 navigate(from, { replace: true })
             })
-            .catch(error => setError(error.message))
+            .catch(error => {
+                setError(error.message)
+            })
     }
 
     // signin with email and password
@@ -34,21 +34,14 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         signIn(email,password)
-        .then(result => {
-            
+        .then(result => { 
             const loggedUser = result.user;
-            console.log(loggedUser)
             navigate(from,{replace:true})
             
         })
         .catch(error => {
+            setError(error.message)
             
-            if(error.message === "Firebase: Error (auth/wrong-password)."){
-                setError('Please enter right Email Address and password')
-            }
-            else{
-                setError(error.message)
-            }
         })
     }
 
@@ -68,7 +61,7 @@ const Login = () => {
 
                         </div>
                         <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                            <p className="mx-4 mb-0 text-center font-semibold text-slate-500">Or</p>
+                            <p className="m-4 mb-0 text-center font-semibold text-slate-500 border-2 p-2 rounded-full h-12 w-12">Or</p>
                         </div>
                         <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded" type="email" placeholder="Email Address" name='email' required />
                         <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4" type="password" placeholder="Password" name='password' required />

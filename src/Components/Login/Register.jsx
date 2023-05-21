@@ -9,7 +9,7 @@ import useTitle from '../../Hooks/useTitle';
 
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUserByEmailPass} = useContext(AuthContext)
     useTitle('Toy-Place|register')
     const location = useLocation()
 
@@ -36,7 +36,7 @@ const Register = () => {
             return
         }
         else {
-            createUser(email, password)
+            createUserByEmailPass(email, password)
                 .then(result => {
                     const createdUser = result.user;
                     navigate('/login')

@@ -16,9 +16,12 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => {
                 setMyToys(data)
-                if(data.length>0){
-                    setLoading(false)
-                }
+                setTimeout(() => {
+                    if(data?.length>0){
+                        setLoading(false)
+                        setMessage('Here are your products!')
+                    }
+                }, 100);
                 if(myToys.length<=0){
                     setLoading(false)
                     setMessage('Sorry you hanve not upload any product here. Please Add your product.')

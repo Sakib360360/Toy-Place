@@ -7,28 +7,30 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 AOS.init();
 
 const Toys = ({ data }) => {
-    const { price, name, rating,  picture, _id } = data
-    const {user} = useContext(AuthContext)
-    const handleDetailsButton =()=>{
+    const { price, name, rating, picture, _id } = data
+    const { user } = useContext(AuthContext)
+    const handleDetailsButton = () => {
         user || Swal.fire({
             position: 'center',
             icon: 'warning',
             title: 'You must login',
             showConfirmButton: false,
             timer: 1000
-          })
-        }
+        })
+    }
     return (
         <div data-aos="flip-right">
-            <div className="card w-80 md:w-96 bg-base-100 shadow-sm border-2 ">
-                <figure><img className='h-60 rounded-t-2xl w-72 p-2' src={picture} alt="photo of product" /></figure>
+            <div className="card w-80 h-96 md:w-60 bg-base-100 shadow-sm border-2 ">
+                <figure><img className='h-40 rounded-t-2xl w-full' src={picture} alt="photo of product" /></figure>
                 <hr />
-                <div className="card-body">
-                    <h2 className="card-title">Name: {name}</h2>
-                    
-                    <p>Price: {price}</p>
-                    
-                    <p>Rating: {rating}</p>
+                <div className="card-body h-52 bg-slate-100">
+                    <div className='flex flex-col h-20'>
+                        <h2 className="font-semibold space-y-0">Name: {name}</h2>
+
+                        <p className='my-0'>Price: {price} $</p>
+
+                        <p className='my-0'>Rating: {rating}</p>
+                    </div>
 
                     <div className="card-actions justify-end">
                         <button onClick={handleDetailsButton} className="btn btn-primary btn-outline"><Link to={`/toyDetails/${_id}`}>Details</Link></button>

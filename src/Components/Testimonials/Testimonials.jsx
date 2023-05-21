@@ -29,9 +29,9 @@ const Testimonilas = () => {
                     <SwiperSlide>
                         <div className="bg-gray-100 p-8 rounded-lg grid grid-cols-1 md:grid-cols-2  text-center">
                             <div className='my-8 flex flex-col justify-center items-center'>
-                                <img className='rounded-full  w-[200px] mx-auto' src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHw%3D&w=1000&q=80" alt="" />
+                                <img className='rounded-full h-[200px]  w-[200px] mx-auto' src="https://media.istockphoto.com/id/1351445167/photo/happy-male-youngster-smiling-at-the-camera-outdoors.jpg?b=1&s=170667a&w=0&k=20&c=iebfRFHi1ncG_CNCZLmOSLnRI_TO0D4rACMbarHsADc=" alt="" />
                                 <p className="text-gray-700 text-lg font-medium">
-                                    John Calleo
+                                    Tom Peterson
                                 </p>
                             </div>
                             <p className="text-gray-800 mb-4 text-lg w-4/5 text-center">
@@ -43,9 +43,9 @@ const Testimonilas = () => {
                     <SwiperSlide>
                         <div className="bg-gray-100 p-8 rounded-lg grid grid-cols-1 md:grid-cols-2  text-center">
                             <div className='my-8 flex flex-col justify-center items-center'>
-                                <img className='rounded-full  w-[200px] mx-auto' src="https://cms-assets.tutsplus.com/uploads/users/810/profiles/19338/profileImage/profile-square-extra-small.png" alt="" />
+                                <img className='rounded-full h-[200px]  w-[200px] mx-auto' src="https://media.istockphoto.com/id/1158015118/photo/portrait-of-a-teenager.jpg?s=612x612&w=0&k=20&c=e_rhW400KVtuJNSjiKlHCuJ9H4zwMjClH1cDKTPgWx8=" alt="" />
                                 <p className="text-gray-700 text-lg font-medium">
-                                    Jon Smith
+                                    J. Harry
                                 </p>
                             </div>
                             <p className="text-gray-800 mb-4 text-lg w-4/5 text-center">
@@ -60,7 +60,7 @@ const Testimonilas = () => {
                             <div className='my-8 flex flex-col justify-center items-center'>
                                 <img className='rounded-full  w-[200px] mx-auto' src="https://www.kingrosales.com/wp-content/uploads/2018/05/king-rosales-profile-photo-square.jpg" alt="" />
                                 <p className="text-gray-700 text-lg font-medium">
-                                    Alex Hary
+                                    Mr. Alex 
                                 </p>
                             </div>
                             <p className="text-gray-800 mb-4 text-lg w-4/5 text-center">

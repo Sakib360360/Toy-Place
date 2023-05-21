@@ -78,16 +78,16 @@ const AllToy = () => {
 
                 <table className="table w-full border-b-2">
 
-                    <thead>
+                    <thead >
                         <tr>
 
-                            <th>Toy</th>
-                            <th>Seller</th>
-                            <th>Price</th>
+                            <th className='bg-sky-100'>Toy</ th>
+                            <th className='bg-sky-100'>Seller</th>
+                            <th className='bg-sky-100'>Price</th>
                             
-                            <th>Subcategory</th>
-                            <th>Quantity</th>
-                            <th>Details</th>
+                            <th className='bg-sky-100'>Subcategory</th>
+                            <th className='bg-sky-100'>Quantity</th>
+                            <th className='bg-sky-100'>Details</th>
 
                         </tr>
                     </thead>

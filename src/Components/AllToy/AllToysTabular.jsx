@@ -21,7 +21,7 @@ const AllToysTabular = ({ data }) => {
             <td className='border-l-2 border-r-2'>{quantity}</td>
 
 
-            <td className=' border-r-2'><button className='btn btn-outline'><Link to={`/toyDetails/${_id}`}>Details</Link></button></td>
+            <td className=' border-r-2'><button className=' rounded-md px-2 py-0 btn btn-outline'><Link to={`/toyDetails/${_id}`}>Details</Link></button></td>
         </tr>
     );
 };
