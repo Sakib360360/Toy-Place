@@ -4,9 +4,11 @@ import MyToysCard from './MyToysCard';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
 
+
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
+    const [message,setMessage] = useState(null)
     const [loading,setLoading] = useState(true)
     useTitle('Toy-Place|my-toys')
     useEffect(() => {
@@ -16,6 +18,10 @@ const MyToys = () => {
                 setMyToys(data)
                 if(data.length>0){
                     setLoading(false)
+                }
+                if(myToys.length<=0){
+                    setLoading(false)
+                    setMessage('Sorry you hanve not upload any product here. Please Add your product.')
                 }
             })
     }, [])
@@ -83,6 +89,9 @@ const MyToys = () => {
             {
                 loading && <div className='flex justify-center items-center my-8'><progress className="progress w-56"></progress></div>
             }
+            {
+                message && <div className='flex justify-center items-center my-8'><p className='text-warning text-2xl font-semiboldsemi w-1/2 text-center'>{message}</p></div>
+            }
             <div className="overflow-x-auto w-full mb-8">
 
                 <table className="table w-full border-b-2">
@@ -103,7 +112,7 @@ const MyToys = () => {
                     <tbody>
 
                         {
-                            myToys.map((toy, index) => <MyToysCard handleDelete={handleDelete} key={index} toy={toy} index={index}></MyToysCard>)
+                            myToys?.map((toy, index) => <MyToysCard handleDelete={handleDelete} key={index} toy={toy} index={index}></MyToysCard>)
                         }
 
                     </tbody>

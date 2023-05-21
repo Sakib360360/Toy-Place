@@ -20,7 +20,7 @@ const Toys = ({ data }) => {
         }
     return (
         <div data-aos="flip-right">
-            <div className="card w-96 bg-base-100 shadow-sm border-2 ">
+            <div className="card w-80 md:w-96 bg-base-100 shadow-sm border-2 ">
                 <figure><img className='h-60 rounded-t-2xl w-72 p-2' src={picture} alt="photo of product" /></figure>
                 <hr />
                 <div className="card-body">
