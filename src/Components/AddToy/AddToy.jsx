@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
+import { FaArrowDown } from "react-icons/fa";
 
 const AddToy = () => {
     const { user } = useContext(AuthContext)
@@ -63,9 +64,12 @@ const AddToy = () => {
     return (
         <div className=' flex justify-center'>
             <form className='border-2 p-4 m-4 bg-sky-50 shadow-2xl rounded-lg' onSubmit={handleAddToy}>
-                <div className='flex font-semibold text-primary animate-bounce justify-center my-4'>
+                <div className='flex font-semibold text-primary  justify-center my-4'>
                     <h1>Add Your Toy to Sell</h1>
                 </div>
+                <div className='flex justify-center text-primary mt-4 animate-bounce'>
+                        <FaArrowDown></FaArrowDown>
+                    </div>
                 {/* form row */}
                 <div className='flex my-4 '>
                     <div className="form-control w-1/2">

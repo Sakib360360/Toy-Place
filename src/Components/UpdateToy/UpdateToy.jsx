@@ -3,14 +3,15 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
+import { FaArrowDown } from "react-icons/fa";
 
 const UpdateToy = () => {
     const data = useLoaderData()
-    const { price,subCategory, name,rating,quantity, category, postedBy, details, picture, _id } = data
-    const {user} = useContext(AuthContext)
+    const { price, subCategory, name, rating, quantity, category, postedBy, details, picture, _id } = data
+    const { user } = useContext(AuthContext)
     useTitle('Toy-Place|update-toy')
     const handleUpdateToy = (event) => {
-        
+
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
@@ -22,17 +23,17 @@ const UpdateToy = () => {
         const postedBy = form.email.value;
         const quantity = form.quantity.value;
         const details = form.details.value;
-        
-        const updateToy = { 
-            "category":category,
-            "subCategory":SubCategory,
-            "postedBy":postedBy,
-            "name":name,
-            "price":price,
-            "picture":picture,
-            "rating":rating,
-            "quantity":quantity,
-            "details":details,
+
+        const updateToy = {
+            "category": category,
+            "subCategory": SubCategory,
+            "postedBy": postedBy,
+            "name": name,
+            "price": price,
+            "picture": picture,
+            "rating": rating,
+            "quantity": quantity,
+            "details": details,
         }
 
         fetch(`https://toy-place-server.vercel.app/updateToy/${_id}`, {
@@ -51,7 +52,7 @@ const UpdateToy = () => {
                         title: 'Successfully modified',
                         showConfirmButton: false,
                         timer: 1500
-                      })
+                    })
                 }
             })
 
@@ -60,8 +61,13 @@ const UpdateToy = () => {
     return (
         <div>
             <div className=' flex justify-center'>
-                <form onSubmit={handleUpdateToy}>
-                    {/* form row */}
+                <form className='border-2 p-4 m-4 bg-sky-50 shadow-2xl rounded-lg' onSubmit={handleUpdateToy}>
+                    <div className='flex font-semibold text-primary  justify-center my-4'>
+                        <h1>Update Toy to Sell</h1>
+                    </div>
+                    <div className='flex justify-center text-primary mt-4 animate-bounce'>
+                        <FaArrowDown></FaArrowDown>
+                    </div>
                     <div className='flex mb-8 '>
                         <div className="form-control w-1/2">
                             <label className="label">
@@ -69,7 +75,7 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input defaultValue={name} type="text" placeholder="Toy name" name='name' className="input w-full input-bordered" />
+                                <input defaultValue={name} type="text" placeholder="Toy name" name='name' className="input w-full bg-sky-100 input-bordered" />
                             </label>
                         </div>
                         <div className="form-control w-1/2 ml-4">
@@ -78,12 +84,12 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="Price" defaultValue={price} name='price' className="input w-full input-bordered" />
+                                <input type="text" placeholder="Price" defaultValue={price} name='price' className=" bg-sky-100 input-bordered input w-full" />
                             </label>
                         </div>
 
                     </div>
-                    {/* form row */}
+
                     <div className='flex mb-8 '>
                         <div className="form-control w-1/2">
                             <label className="label">
@@ -91,7 +97,7 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="Category" defaultValue={category} name='category' className="input w-full input-bordered" />
+                                <input type="text" placeholder="Category" defaultValue={category} name='category' className=" w-full bg-sky-100 input input-bordered" />
                             </label>
                         </div>
                         <div className="form-control w-1/2 ml-4">
@@ -100,12 +106,12 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="sub-category" defaultValue={subCategory} name='SubCategory' className="input w-full input-bordered" />
+                                <input type="text" placeholder="sub-category" defaultValue={subCategory} name='SubCategory' className=" wfull- bg-sky-100 input input-bordered" />
                             </label>
                         </div>
 
                     </div>
-                    {/* form row */}
+
                     <div className='flex mb-8 '>
                         <div className="form-control w-1/2">
                             <label className="label">
@@ -113,7 +119,7 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="Email" value={user?.email} name='email' className="input w-full input-bordered" />
+                                <input type="text" placeholder="Email" value={user?.email} name='email' className="input w-full bg-sky-100 input-bordered" />
                             </label>
                         </div>
                         <div className="form-control w-1/2 ml-4">
@@ -122,7 +128,7 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="Seller Name" defaultValue={user?.displayName} name='postedBy' className="input w-full input-bordered" />
+                                <input type="text" placeholder="Seller Name" defaultValue={user?.displayName} name='postedBy' className="input w-full bg-sky-100 input-bordered" />
                             </label>
                         </div>
 
@@ -137,7 +143,7 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="Photo URL" defaultValue={picture} name='url' className="input w-full input-bordered" />
+                                <input type="text" placeholder="Photo URL" defaultValue={picture} name='url' className="input w-full bg-sky-100 input-bordered" />
                             </label>
                         </div>
                         <div className="form-control w-1/2 ml-4">
@@ -146,7 +152,7 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="number" placeholder="Rating" defaultValue={quantity} name='quantity' className="input w-full input-bordered" />
+                                <input type="number" placeholder="Rating" defaultValue={quantity} name='quantity' className="input w-full bg-sky-100 input-bordered" />
                             </label>
                         </div>
 
@@ -159,7 +165,7 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="Rating" defaultValue={rating} name='rating' className="input w-full input-bordered" />
+                                <input type="text" placeholder="Rating" defaultValue={rating} name='rating' className="input w-full bg-sky-100 input-bordered" />
                             </label>
                         </div>
                         <div className="form-control w-1/2 ml-4">
@@ -168,13 +174,14 @@ const UpdateToy = () => {
                             </label>
                             <label className="input-group ">
 
-                                <input type="text" placeholder="Details" defaultValue={details} name='details' className="input w-full  input-bordered" />
+                                <input type="text" placeholder="Details" defaultValue={details} name='details' className="input w-full  bg-sky-100 input-bordered" />
                             </label>
                         </div>
 
                     </div>
                     <div>
-                        <input type="submit" className="btn btn-block" />
+
+                        <input type="submit" className="btn btn-primary btn-outline btn-block" />
 
                     </div>
                 </form>

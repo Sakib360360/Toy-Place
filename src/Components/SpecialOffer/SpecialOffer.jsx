@@ -43,7 +43,7 @@ const SpecialOffer = ({ toy }) => {
                         <h2 className="card-title">{toyOffer[0]?.name}</h2>
                         <p>price:{toyOffer[0]?.price} $ <span>Sale-30%</span></p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary">Buy</button>
+                            <button className="btn btn-outline btn-primary">Buy</button>
                         </div>
                     </div>
                 </div></div></SwiperSlide>
@@ -54,7 +54,7 @@ const SpecialOffer = ({ toy }) => {
                         <h2 className="card-title">{toyOffer[1]?.name}</h2>
                         <p>price:{toyOffer[1]?.price} $ <span className="text-warning">--on Sale-30%</span></p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary">Buy</button>
+                            <button className="btn btn-outline btn-primary">Buy</button>
                         </div>
                     </div>
                 </div></div></SwiperSlide>
@@ -65,7 +65,7 @@ const SpecialOffer = ({ toy }) => {
                         <h2 className="card-title">{toyOffer[2]?.name}</h2>
                         <p>price:{toyOffer[2]?.price} $ <span className="text-warning">--on Sale-30%</span></p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary">Buy</button>
+                            <button className="btn btn-outline btn-primary">Buy</button>
                         </div>
                     </div>
                 </div></div></SwiperSlide>

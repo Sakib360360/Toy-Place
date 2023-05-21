@@ -11,7 +11,7 @@ const ToyDetails = () => {
     console.log(toy)
     return (
         <div className='flex justify-center items-center'>
-            <div className=" w-3/5 card bg-base-100 shadow-xl my-8">
+            <div className="w-full mt-8 md:w-3/5 card bg-base-100 shadow-xl my-8">
                 <figure><img className='w-full' src={picture} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>

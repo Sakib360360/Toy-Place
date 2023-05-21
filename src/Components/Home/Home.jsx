@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 import Testimonials from '../Testimonials/Testimonials';
 import GallerySection from '../Gallery/GallerySection';
 import SpecialOffer from '../SpecialOffer/SpecialOffer';
+import { Link } from 'react-router-dom';
 AOS.init();
 
 const Home = () => {
@@ -97,9 +98,7 @@ const Home = () => {
                 <GallerySection></GallerySection>
             </div>
             <div className=' my-12 '>
-                <h1 data-aos="flip-left"
-                    data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000" className=" text-primary font-bold text-4xl mb-12 text-center">See by <br /> Category & Subcategory</h1>
+                <h1 data-aos="zoom-in-down" className=" text-secondary font-bold text-4xl mb-12 text-center">Shop by <br /> Category & Subcategory</h1>
                 <div className='flex max-w-5xl flex-wrap '>
                     {
                         uniqueCategoriesArray.map((item,index) => {
@@ -152,9 +151,8 @@ const Home = () => {
                 </div>
                 {/* button for show all */}
                 <div className='flex justify-center my-8'>
-                    {
-                        open && <button onClick={handleShowAll} className='btn btn-outline btn-secondary'>Show All</button>
-                    }
+                    <button onClick={handleShowAll} className='btn btn-outline btn-secondary'><Link to='/allToys'>Show All</Link></button>
+                    
 
                 </div>
                 {/* special offer */}
@@ -165,6 +163,7 @@ const Home = () => {
                 <div className='mt-8 mb-8 h-96 mx-auto flex justify-center'>
                     <Testimonials></Testimonials>
                 </div>
+                
 
             </div>
 
