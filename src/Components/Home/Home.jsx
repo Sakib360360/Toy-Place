@@ -94,16 +94,18 @@ const Home = () => {
                 <Bannar></Bannar>
             </div>
             {/* gallery */}
-            <div>
+            <div className='overflow-x-hidden md:overflow-visible'>
                 <GallerySection></GallerySection>
             </div>
             <div className=' my-12 '>
-                <h1 data-aos="zoom-in-down" className=" text-secondary font-bold text-4xl mb-12 text-center">Shop by <br /> Category & Subcategory</h1>
-                <div className='flex max-w-5xl flex-wrap '>
+                <div className='overflow-x-hidden'>
+                    <h1 data-aos="zoom-in-down" className=" text-secondary font-bold text-4xl mb-12 text-center">Shop by <br /> Category & Subcategory</h1>
+                </div>
+                <div className='flex max-w-5xl overflow-x-hidden flex-wrap '>
                     {
-                        uniqueCategoriesArray.map((item,index) => {
+                        uniqueCategoriesArray.map((item, index) => {
                             return <div key={index}>
-                                <button  onFocus={handleFocus}
+                                <button onFocus={handleFocus}
                                     onBlur={handleBlur} onClick={() => handleSubCategory(item)} className='border-t-2 border-l-2 px-2 border-r-2 ml-2 rounded-t-lg'>{item}</button>
                             </div>
                         })
@@ -152,18 +154,18 @@ const Home = () => {
                 {/* button for show all */}
                 <div className='flex justify-center my-8'>
                     <button onClick={handleShowAll} className='btn btn-outline btn-secondary'><Link to='/allToys'>Show All</Link></button>
-                    
+
 
                 </div>
                 {/* special offer */}
-                    <SpecialOffer toy={allToys}></SpecialOffer>
+                <SpecialOffer toy={allToys}></SpecialOffer>
                 {/* testimonials */}
 
 
                 <div className='mt-8 mb-8 h-96 mx-auto flex justify-center'>
                     <Testimonials></Testimonials>
                 </div>
-                
+
 
             </div>
 

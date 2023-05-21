@@ -1,16 +1,18 @@
 import React from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
 
 const GallerySection = () => {
     return (
         <div>
-            <div  className="container ml-8 lg:px-32 md:px-4 md:py-8 mx-auto items-center ">
-                <div data-aos="zoom-in">
-                <h1 className='text-center text-secondary text-3xl font-bold py-12'>Gallery</h1>
+            <div className="container ml-8 lg:px-32 md:px-4 md:py-8 mx-auto items-center ">
+                <div className='overflow-x-hidden md:overflow-visible'>
+                    <div data-aos="zoom-in">
+                        <h1 className='text-center text-secondary text-3xl font-bold py-12'>Gallery</h1>
+                    </div>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+                <div className='grid overflow-x-hidden md:overflow-visible grid-cols-1 md:grid-cols-3 gap-4'>
                     <div data-aos="fade-right">
                         <img className='md:h-44 h-40 w-60 md:w-72 md:scale-100 md:hover:scale-105 ease-in duration-500 ' src="https://media.istockphoto.com/id/1147825044/photo/kids-toys-child-building-tower-of-toy-blocks.jpg?s=612x612&w=is&k=20&c=SxEsFX4QcU0r-r3dT5uYWfHjhjGOKpQyS3wO-4yXwQI=" alt="" />
                     </div>
@@ -56,8 +58,8 @@ const GallerySection = () => {
                     <div data-aos="fade-left">
                         <img className='md:h-44 h-40 w-60 md:w-72 md:scale-100 md:hover:scale-105 ease-in duration-500' src="https://www.parents.com/thmb/BZD4iGDcFcrgYBakJOYnA_mh4Yk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/shutterstock_276810557-99852672e0c04074afbb33694781be15.jpg" alt="" />
                     </div>
-                    
-                    
+
+
                 </div>
             </div>
 
