@@ -42,7 +42,7 @@ const GallerySection = () => {
                         <img className='md:h-44 h-40 w-60 md:w-72 md:scale-100 md:hover:scale-105 ease-in duration-500' src="https://media.gettyimages.com/id/939438514/photo/sweet-child-playing-with-plastic-blocks.jpg?s=612x612&w=gi&k=20&c=e0-iZDXMJDTMcEFYCqRS_jnmxRhCc5p--AUByRU4gX8=" alt="" />
                     </div>
                     <div data-aos="fade-down">
-                        <img className='md:h-44 h-40 w-60 md:w-72 md:scale-100 md:hover:scale-105 ease-in duration-500' src="https://thumbs.dreamstime.com/b/cute-african-american-toddler-baby-girl-playing-wooden-toys-stacking-tower-blocks-carpet-home-cute-african-american-212441677.jpg" alt="" />
+                        <img className='md:h-44 h-40 w-60 md:w-72 md:scale-100 md:hover:scale-105 ease-in duration-500' src="https://previews.123rf.com/images/oksun70/oksun701504/oksun70150400132/38772549-kid-child-boy-playing-on-floor-isolated.jpg" alt="" />
                     </div>
                     <div data-aos="fade-left">
                         <img className='md:h-44 h-40 w-60 md:w-72 md:scale-100 md:hover:scale-105 ease-in duration-500' src="https://img.freepik.com/premium-photo/early-development-concept-little-toddler-boy-playing-with-educational-wooden-toy-home-sitting_116547-24092.jpg" alt="" />

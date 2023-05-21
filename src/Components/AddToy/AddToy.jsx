@@ -72,13 +72,13 @@ const AddToy = () => {
                     </div>
                 {/* form row */}
                 <div className='flex my-4 '>
-                    <div className="form-control w-1/2">
+                    <div className="form-control  w-1/2">
                         <label className="label">
                             <p className="label-text text-sky-500">Toy name</p>
                         </label>
                         <label className=" ">
 
-                            <input defaultValue={''} required type="text" placeholder="Toy name" name='name' className="input w-full input-bordered placeholder-slate-600 bg-sky-100" />
+                            <input  defaultValue={''} required type="text" placeholder="Toy name" name='name' className="input w-full input-bordered placeholder-slate-600 bg-sky-100" />
                         </label>
                     </div>
                     <div className="form-control w-1/2 ml-4">

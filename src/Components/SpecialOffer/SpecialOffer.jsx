@@ -41,7 +41,7 @@ const SpecialOffer = ({ toy }) => {
                     <figure><img className="h-72 w-72 rounded-full" src={toyOffer[0]?.picture} alt="car!" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{toyOffer[0]?.name}</h2>
-                        <p>price:{toyOffer[0]?.price} $ <span>Sale-30%</span></p>
+                        <p>price:{toyOffer[0]?.price} $ <span className="text-warning font-semibold">Sale-30%</span></p>
                         <div className="card-actions justify-center">
                             <button className="btn btn-outline btn-primary">Buy</button>
                         </div>
@@ -52,7 +52,7 @@ const SpecialOffer = ({ toy }) => {
                     <figure><img className="h-72 w-72 rounded-full" src={toyOffer[1]?.picture} alt="car!" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{toyOffer[1]?.name}</h2>
-                        <p>price:{toyOffer[1]?.price} $ <span className="text-warning">--on Sale-30%</span></p>
+                        <p>price:{toyOffer[1]?.price} $ <span className="text-warning font-semibold">--on Sale-30%</span></p>
                         <div className="card-actions justify-center">
                             <button className="btn btn-outline btn-primary">Buy</button>
                         </div>
@@ -63,7 +63,7 @@ const SpecialOffer = ({ toy }) => {
                     <figure><img className="h-72 w-72 rounded-full" src={toyOffer[2]?.picture} alt="car!" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{toyOffer[2]?.name}</h2>
-                        <p>price:{toyOffer[2]?.price} $ <span className="text-warning">--on Sale-30%</span></p>
+                        <p>price:{toyOffer[2]?.price} $ <span className="text-warning font-semibold">--on Sale-30%</span></p>
                         <div className="card-actions justify-center">
                             <button className="btn btn-outline btn-primary">Buy</button>
                         </div>

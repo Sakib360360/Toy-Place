@@ -86,7 +86,7 @@ const AllToy = () => {
                             <th className='bg-sky-100'>Price</th>
                             
                             <th className='bg-sky-100'>Subcategory</th>
-                            <th className='bg-sky-100'>Quantity</th>
+                            <th className='bg-sky-100'>Quantity Available</th>
                             <th className='bg-sky-100'>Details</th>
 
                         </tr>
